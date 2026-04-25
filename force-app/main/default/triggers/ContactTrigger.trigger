@@ -47,7 +47,7 @@ trigger ContactTrigger on Contact(before insert, after insert, after update) {
 	for (contact cont : Trigger.new)
 	{
 		if (integer.valueOf(cont.DummyJSON_Id__c) > 100){
-			DummyJSONCallout.postCreateDummyJSONUser(cont.DummyJSON_Id__c);
+			DummyJSONCallout.postCreateDummyJSONUser(cont.Id);
 	}
 }
 }
