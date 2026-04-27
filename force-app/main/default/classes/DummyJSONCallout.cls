@@ -95,17 +95,14 @@ public with sharing class DummyJSONCallout {
 		
 		
 
-		// Deserialize the address from the JSON response.
-		Map<String,Object> address = (Map<String, Object>) userData.get('address');
-		if(address == null) address = new Map <String,Object>();
-
-		// Set the address fields on the contact.
-		if (address != null){
-			cont.MailingStreet = (String) address.get('address');
-			cont.MailingCity = (String) address.get('city');
-			cont.MailingState = (String) address.get('state');
+	
+		Map<String,Object> address = (Map<String,Object>) userData.get('address');
+		if (address != null) {
+			cont.MailingStreet    = (String) address.get('address');
+			cont.MailingCity      = (String) address.get('city');
+			cont.MailingState     = (String) address.get('state');
 			cont.MailingPostalCode = (String) address.get('postalCode');
-			cont.MailingCountry = (String) address.get('country');
+			cont.MailingCountry   = (String) address.get('country');
 		}
 
 
